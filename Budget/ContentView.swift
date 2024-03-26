@@ -5,17 +5,29 @@
 //  Created by Will Anderson on 3/23/24.
 //
 
+import Foundation
 import SwiftUI
 
 struct ContentView: View {
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor(rgb: 0x63CCCA)
+    }
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
+            Home().tabItem {
+                Label("Home", systemImage: "house")
+            }
+            JobListings().tabItem {
+                Label("Listings", systemImage: "list.bullet.clipboard.fill")
+            }
+            BudgetSuggestions().tabItem {
+                Label("Suggestions", systemImage: "dollarsign.circle.fill")
+            }
+            SettingsPage().tabItem {
+                Label("Settings", systemImage: "gearshape.fill")
+            }
+        }.tint(.black)
     }
 }
 

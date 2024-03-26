@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct BudgetSuggestions: View {
+    var body: some View {
+        Text("Suggestions")
+    }
+}
+
+#Preview {
+    BudgetSuggestions()
+}

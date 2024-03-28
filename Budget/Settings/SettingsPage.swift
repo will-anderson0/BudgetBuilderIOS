@@ -13,22 +13,26 @@ struct SettingsPage: View {
     @State var isAuthenticated = false
     
     var body: some View {
-        Form {
-            Login(isAuthenticated: $isAuthenticated)
-            if isAuthenticated {
-                Button("Sign out", role: .destructive) {
-                    Task {
-                        do{
-                            try await supabase.auth.signOut()
-                            isAuthenticated = false
+        ZStack {
+            Color(UIColor(rgb: 0x8AAAE5)).ignoresSafeArea(.all)
+            VStack {
+                Login(isAuthenticated: $isAuthenticated)
+                if isAuthenticated {
+                    Button("Sign out", role: .destructive) {
+                        Task {
+                            do{
+                                try await supabase.auth.signOut()
+                                isAuthenticated = false
+                            }
                         }
                     }
                 }
+                
+            }.onAppear() {
+                authenticateUser()
             }
+
             
-        }
-        .onAppear() {
-            authenticateUser()
         }
     }
     

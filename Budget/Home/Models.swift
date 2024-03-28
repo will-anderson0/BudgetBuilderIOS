@@ -6,18 +6,15 @@
 //
 
 import Foundation
-import SwiftUI
 
 struct Profile: Decodable {
-    let username: String?
-    let fullName: String?
-    let jobsCompleted: Int?
-    let totalAccumulatedValue: Int?
-    
-    enum CodingKeys: String, Int, CodingKeys {
-        case username
-        case fullName
-        case jobsCompleted
-        case totalAccumulatedValue
-    }
+  let username: String?
+  //let fullName: String?
+  //let website: String?
+
+  enum CodingKeys: String, CodingKey {
+    case username
+    //case fullName = "full_name"
+    //case website
+  }
 }

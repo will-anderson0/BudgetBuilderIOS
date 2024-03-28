@@ -29,9 +29,7 @@ struct Home: View {
             
             TabView(selection: $selectedTab) {
                 GreetingPage()
-                    .tag(0)
-                Page2View()
-                    .tag(1)
+                PotentialProfits()
             }
             
         }
@@ -40,46 +38,6 @@ struct Home: View {
         
     }
 }
-
-struct SwipeBar: View {
-    let text: String
-    let isSelected: Bool
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            VStack {
-                Text(text)
-                    .foregroundColor(isSelected ? Color(UIColor(rgb: 0xFCF6F5)) : .gray)
-            }
-        }
-    }
-}
-
-struct Page2View: View {
-    var body: some View {
-        ZStack {
-            Text("Graph of potential growth")
-                .foregroundColor(.white)
-                .font(.largeTitle)
-                .fontWeight(.bold)
-        }
-    }
-}
-
-struct DetailView: View {
-    var body: some View {
-        VStack {
-            Text("Detail Page")
-                .font(.title)
-                .padding()
-            
-            Spacer()
-        }
-        .navigationTitle("Detail")
-    }
-}
-
 
 #Preview {
     Home()

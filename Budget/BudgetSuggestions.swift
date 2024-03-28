@@ -10,7 +10,9 @@ import SwiftUI
 
 struct BudgetSuggestions: View {
     var body: some View {
-        Text("Suggestions")
+        ZStack {
+            Color(UIColor(rgb: 0x8AAAE5)).ignoresSafeArea(.all)
+        }
     }
 }
 

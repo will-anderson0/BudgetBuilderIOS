@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     init() {
-        UITabBar.appearance().backgroundColor = UIColor(rgb: 0x63CCCA)
+        UITabBar.appearance().backgroundColor = UIColor(rgb: 0xFCF6F5)
     }
     
     var body: some View {
@@ -27,7 +27,9 @@ struct ContentView: View {
             SettingsPage().tabItem {
                 Label("Settings", systemImage: "gearshape.fill")
             }
-        }.tint(.black)
+        }
+        .tint(.black)
+        .environment(\.colorScheme, .light)
     }
 }
 

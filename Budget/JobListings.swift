@@ -10,18 +10,21 @@ import SwiftUI
 
 struct JobListings: View {
     var body: some View {
-        VStack {
-            Text("Recommened Jobs")
-                .font(.title)
-            
-                List {
-                    Text("Job1")
-                    Text("Job2")
-                    Text("Job3")
-                    Text("Job4")
-                    Text("Job5")
-                }
+        ZStack {
+            Color(UIColor(rgb: 0x8AAAE5)).ignoresSafeArea(.all)
+            VStack {
+                Text("Recommened Jobs")
+                    .font(.title)
+                
+                Text("Job1")
+                Text("Job2")
+                Text("Job3")
+                Text("Job4")
+                Text("Job5")
+                
+            }
         }
+        
     }
 }
 

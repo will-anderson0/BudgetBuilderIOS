@@ -17,16 +17,7 @@ struct SettingsPage: View {
             Color(UIColor(rgb: 0x8AAAE5)).ignoresSafeArea(.all)
             VStack {
                 Login(isAuthenticated: $isAuthenticated)
-                if isAuthenticated {
-                    Button("Sign out", role: .destructive) {
-                        Task {
-                            do{
-                                try await supabase.auth.signOut()
-                                isAuthenticated = false
-                            }
-                        }
-                    }
-                }
+                Settings(isAuthenticated: $isAuthenticated)
                 
             }.onAppear() {
                 authenticateUser()

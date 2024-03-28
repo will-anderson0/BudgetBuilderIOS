@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct GreetingPage: View {
-    @State var username = "NOT SET"
+    @State var username = ""
     @State var jobsCompleted = 0
     
     var body: some View {
@@ -18,6 +18,30 @@ struct GreetingPage: View {
                 .foregroundColor(.white)
                 .font(.largeTitle)
                 .fontWeight(.bold)
+                .task {
+                    await getUserData()
+                    print(username)
+                }
+        }
+    }
+    
+    func getUserData() async {
+        do {
+            let currentUser = try await supabase.auth.session.user
+            
+            let profile: Profile = try await supabase.database
+                .from("profiles")
+                .select()
+                .eq("id", value: currentUser.id)
+                .single()
+                .execute()
+                .value
+            print(profile)
+            
+            self.username = profile.username ?? ""
+            
+        } catch {
+            debugPrint(error)
         }
     }
 }

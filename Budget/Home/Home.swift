@@ -14,13 +14,12 @@ struct Home: View {
     var body: some View {
         VStack {
             HStack(spacing: 30) {
-                SwipeBar(text: "Present", isSelected: selectedTab == 0) {
+                SwipeBar(text: "Present", index: 0, selectedIndex: selectedTab) {
                     selectedTab = 0
                 }
                 .font(.system(size: 22))
-            
                 
-                SwipeBar(text: "Potenial", isSelected: selectedTab == 1) {
+                SwipeBar(text: "Potential", index: 1, selectedIndex: selectedTab) {
                     selectedTab = 1
                 }
                 .font(.system(size: 22))
@@ -29,7 +28,9 @@ struct Home: View {
             
             TabView(selection: $selectedTab) {
                 GreetingPage()
+                    .tag(0)
                 PotentialProfits()
+                    .tag(1)
             }
             
         }

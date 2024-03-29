@@ -10,6 +10,7 @@ import SwiftUI
 
 struct NumberBox: View {
     let text: String
+    let money: Bool
     let number: Int
     
     var body: some View {
@@ -21,7 +22,7 @@ struct NumberBox: View {
             
             Spacer()
             
-            Text("\(number)")
+            Text("\(money ? "$" : "")\(number)")
                 .font(.title)
                 .foregroundColor(.white)
                 .padding(.vertical, 5)

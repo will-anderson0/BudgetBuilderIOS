@@ -10,15 +10,21 @@ import SwiftUI
 
 struct SwipeBar: View {
     let text: String
-    let isSelected: Bool
+    let index: Int
+    let selectedIndex: Int
     let action: () -> Void
+    
+    var isSelected: Bool {
+        return index == selectedIndex
+    }
     
     var body: some View {
         Button(action: action) {
-            VStack {
-                Text(text)
-                    .foregroundColor(isSelected ? Color(UIColor(rgb: 0xFCF6F5)) : .gray)
-            }
+            Text(text)
+                .foregroundColor(isSelected ? Color(UIColor(rgb: 0xFCF6F5)) : .gray)
+                .fontWeight(.bold)
         }
+        .disabled(true)
     }
 }
+

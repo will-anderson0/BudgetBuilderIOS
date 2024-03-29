@@ -32,7 +32,6 @@ struct SettingsPage: View {
         Task {
             do {
                 for await state in await supabase.auth.authStateChanges {
-                    print("Auth state change event: \(state.event)")
                     print("Auth state: \(state.session != nil ? "Logged in" : "Logged out")")
                     
                     if [.initialSession, .signedIn, .signedOut].contains(state.event) {

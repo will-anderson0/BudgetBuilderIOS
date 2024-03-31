@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct ExpandKnowledge: View {
+    
+    var body: some View {
+        Text("Expandeddd")
+    }
+}

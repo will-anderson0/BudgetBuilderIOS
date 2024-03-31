@@ -11,12 +11,19 @@ import SwiftUI
 struct ProgessBox: View {
     let accountBalance: Int
     let totalGoal: Int
+    let percent: Double
+    
+    init(accountBalance: Int, totalGoal: Int) {
+        self.accountBalance = accountBalance
+        self.totalGoal = totalGoal
+        self.percent = Double(accountBalance) / Double(totalGoal)
+    }
     
     var body: some View {
         VStack{
             HStack {
-                Text("Goal Progress")
-                    .font(.system(size: 22))
+                Text("Goal: \(String(format: "%.0f", percent * 100))% complete")
+                    .font(.system(size: 20))
                     .foregroundColor(.gray)
                     .padding(.leading, 10)
                 
@@ -30,10 +37,10 @@ struct ProgessBox: View {
                     .background(Color(UIColor(rgb: 0x058ED9)))
                     .cornerRadius(8)
             }
-            ProgressView(value: Double(accountBalance) / Double(totalGoal), total: 1.0)
+            ProgressView(value: percent, total: 1.0)
                 .padding(.horizontal)
                 .tint(Color(UIColor(rgb: 0x058ED9)))
-
+            
             
         }
         .padding(10)

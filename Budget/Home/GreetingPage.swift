@@ -14,6 +14,17 @@ struct GreetingPage: View {
     @State var accountBalance = 0
     @State var profitGoal = 0
     @State var isExpandKnowledgePresented = false
+    @State var cards = [
+        Card(text: "Card 1"),
+        Card(text: "Card 2"),
+        Card(text: "Card 3"),
+        Card(text: "Card 4"),
+        Card(text: "Card 5"),
+        Card(text: "Card 6"),
+        Card(text: "Card 7")
+        ]
+    @State var currentIndex = 0
+    @State var translation: CGSize = .zero
 
     
     var body: some View {
@@ -49,17 +60,11 @@ struct GreetingPage: View {
             }*/
             
             //Swipe cards with fun facts and tips
-            let cards = [
-                    Card(text: "Card 1"),
-                    Card(text: "Card 2"),
-                    Card(text: "Card 3"),
-                    Card(text: "Card 4")
-                ]
-            SwipeableCardStack(items: cards) { card in
-                        Text(card.text)
-                            .font(.title)
-                            .padding()
-                    }
+            SwipeableCardStack(items: $cards, currentIndex: $currentIndex, translation: $translation) { card in
+                SwipeableCardContent(card: card)
+            }
+
+
             
             Spacer()
             
@@ -91,76 +96,12 @@ struct GreetingPage: View {
     }
 }
 
-struct SwipeableCardStack<T: Identifiable, Content: View>: View {
-    let items: [T]
-    let content: (T) -> Content
-    
-    @State var displayedItems: [T]
-    @State var translation: CGSize = .zero
-    @State var currentIndex = 0
-    
-    init(items: [T], content: @escaping (T) -> Content) {
-        self.items = items
-        self.content = content
-        self._displayedItems = State(initialValue: items)
-    }
-    
+struct SwipeableCardContent: View {
+    let card: Card
+
     var body: some View {
-        ZStack {
-            ForEach(displayedItems, id: \.id) { item in
-                SwipeableCardView(content: {
-                    content(item)
-                })
-                .offset(x: 0, y: self.currentIndex == self.displayedItems.count - 1 ? self.translation.height : 0)
-                .offset(x: self.translation.width, y: 0)
-                .rotationEffect(.degrees(self.currentIndex == self.displayedItems.count - 1 ? Double(self.translation.width) / 20 : 0))
-                .scaleEffect(self.currentIndex == self.displayedItems.count - 1 ? 1 - abs(self.translation.width / 500) : 1)
-                .gesture(
-                    DragGesture()
-                        .onChanged { value in
-                            self.translation = value.translation
-                        }
-                        .onEnded { value in
-                            withAnimation {
-                                if self.translation.width > 100 {
-                                    self.currentIndex = (self.currentIndex + 1) % self.displayedItems.count
-                                    if abs(self.translation.width) > 125 { // Adjust this threshold as needed
-                                        self.displayedItems.remove(at: self.displayedItems.count - 1)
-                                    }
-                                } else if self.translation.width < -100 {
-                                    self.currentIndex = (self.currentIndex - 1 + self.displayedItems.count) % self.displayedItems.count
-                                    if abs(self.translation.width) > 125 { // Adjust this threshold as needed
-                                        self.displayedItems.remove(at: self.displayedItems.count - 1)
-                                    }
-                                }
-                                self.translation = .zero
-                            }
-                        }
-                )
-            }
-        }
-        .padding()
+        Text(card.text)
+            .font(.title)
+            .padding()
     }
-}
-
-
-
-struct SwipeableCardView<Content: View>: View {
-    let content: () -> Content
-    
-    var body: some View {
-        RoundedRectangle(cornerRadius: 10)
-            .fill(Color.blue)
-            .overlay(
-                content()
-                    .foregroundColor(.white)
-            )
-            .frame(width: 300, height: 400)
-            .shadow(radius: 10)
-    }
-}
-
-struct Card: Identifiable {
-    let id = UUID()
-    let text: String
 }

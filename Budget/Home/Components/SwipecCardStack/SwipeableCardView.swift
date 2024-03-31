@@ -10,9 +10,12 @@ import SwiftUI
 
 struct SwipeableCardView<Content: View>: View {
     let content: () -> Content
-    
+    let translation: CGSize // Add translation as a parameter
+
     var body: some View {
-        RoundedRectangle(cornerRadius: 10)
+        let angle = -Double(translation.width) / 20 // Adjust the angle of rotation
+
+        return RoundedRectangle(cornerRadius: 10)
             .fill(Color.blue)
             .overlay(
                 content()
@@ -20,5 +23,9 @@ struct SwipeableCardView<Content: View>: View {
             )
             .frame(width: 300, height: 400)
             .shadow(radius: 10)
+            .rotationEffect(.degrees(angle))
+            .offset(x: translation.width, y: 0) // Adjust the offset based on translation
+            .opacity(translation.width == 0 ? 1 : 0.8) // Reduce opacity when swiping
+            .animation(.spring()) // Apply spring animation
     }
 }

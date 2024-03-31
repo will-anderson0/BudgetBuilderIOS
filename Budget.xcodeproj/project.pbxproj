@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A92F3FC22BB8FF9600D6321F /* SwipeableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F3FC12BB8FF9600D6321F /* SwipeableCardView.swift */; };
+		A92F3FC42BB8FFB000D6321F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F3FC32BB8FFB000D6321F /* Card.swift */; };
 		A9BFCB812BAF54260048F13C /* BudgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BFCB802BAF54260048F13C /* BudgetApp.swift */; };
 		A9BFCB832BAF54260048F13C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BFCB822BAF54260048F13C /* ContentView.swift */; };
 		A9BFCB852BAF54270048F13C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BFCB842BAF54270048F13C /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A92F3FC12BB8FF9600D6321F /* SwipeableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardView.swift; sourceTree = "<group>"; };
+		A92F3FC32BB8FFB000D6321F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A9BFCB7D2BAF54260048F13C /* Budget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BFCB802BAF54260048F13C /* BudgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetApp.swift; sourceTree = "<group>"; };
 		A9BFCB822BAF54260048F13C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				A9BFCBCC2BB8FE450048F13C /* SwipeableCardStack.swift */,
+				A92F3FC12BB8FF9600D6321F /* SwipeableCardView.swift */,
+				A92F3FC32BB8FFB000D6321F /* Card.swift */,
 			);
 			path = SwipecCardStack;
 			sourceTree = "<group>";
@@ -242,9 +248,11 @@
 				A9BFCB812BAF54260048F13C /* BudgetApp.swift in Sources */,
 				A9BFCB972BAF57180048F13C /* Home.swift in Sources */,
 				A9BFCB952BAF57010048F13C /* Settings.swift in Sources */,
+				A92F3FC42BB8FFB000D6321F /* Card.swift in Sources */,
 				A9BFCBB82BB4BC0D0048F13C /* UIColor.swift in Sources */,
 				A9BFCBC22BB4E4080048F13C /* Models.swift in Sources */,
 				A9BFCBA72BB0FAB70048F13C /* Login.swift in Sources */,
+				A92F3FC22BB8FF9600D6321F /* SwipeableCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

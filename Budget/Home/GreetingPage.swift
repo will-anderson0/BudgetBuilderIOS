@@ -14,18 +14,16 @@ struct GreetingPage: View {
     @State var accountBalance = 0
     @State var profitGoal = 0
     @State var isExpandKnowledgePresented = false
-    @State var cards = [
-        Card(text: "Card 1"),
-        Card(text: "Card 2"),
-        Card(text: "Card 3"),
-        Card(text: "Card 4"),
-        Card(text: "Card 5"),
-        Card(text: "Card 6"),
-        Card(text: "Card 7")
-        ]
+    @State var cards = [Card(text: "Fun Fact 1"),
+                        Card(text: "Fun Fact 2"),
+                        Card(text: "Fun Fact 3"),
+                        Card(text: "Fun Fact 4"),
+                        Card(text: "Fun Fact 5"),
+                        Card(text: "Fun Fact 6"),
+                        Card(text: "Fun Fact 7")]
     @State var currentIndex = 0
     @State var translation: CGSize = .zero
-
+    
     
     var body: some View {
         VStack {
@@ -37,7 +35,7 @@ struct GreetingPage: View {
             Spacer()
             
             //Box to show Jobs Completed
-            /*NumberBox(text: "Jobs Completed", money: false, number: jobsCompleted)
+            NumberBox(text: "Jobs Completed", money: false, number: jobsCompleted)
                 .padding(.horizontal)
             
             //Box to show Profit Accumulated
@@ -57,19 +55,20 @@ struct GreetingPage: View {
             }
             .sheet(isPresented: $isExpandKnowledgePresented) {
                 ExpandKnowledge()
-            }*/
+            }
             
             //Swipe cards with fun facts and tips
             SwipeableCardStack(items: $cards, currentIndex: $currentIndex, translation: $translation) { card in
                 SwipeableCardContent(card: card)
-            }
-
-
+            }.padding(.horizontal)
+            
+            
             
             Spacer()
             
         }.task {
             await getUserData()
+            await getFunFacts()
         }
     }
     
@@ -94,11 +93,34 @@ struct GreetingPage: View {
             debugPrint(error)
         }
     }
+    
+    func getFunFacts() async {
+        var funFactArray: [Card] = []
+        
+        do {
+            let response: [FunFact] = try await supabase.database
+                .from("financialfunfacts")
+                .select("fun_fact")
+                .execute()
+                .value
+            
+            for funFact in response {
+                if let factText = funFact.funfact {
+                    let card = Card(text: factText)
+                    funFactArray.append(card)
+                }
+            }
+            self.cards = funFactArray
+            
+        } catch {
+            debugPrint(error)
+        }
+    }
 }
 
 struct SwipeableCardContent: View {
     let card: Card
-
+    
     var body: some View {
         Text(card.text)
             .font(.title)

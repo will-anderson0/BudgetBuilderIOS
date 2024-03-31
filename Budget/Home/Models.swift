@@ -25,3 +25,12 @@ struct Profile: Decodable {
         case profitGoal = "profit_goal"
     }
 }
+
+struct FunFact: Decodable {
+    let funfact: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case funfact = "fun_fact"
+    }
+}
+

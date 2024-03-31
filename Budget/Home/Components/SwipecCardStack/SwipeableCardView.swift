@@ -21,11 +21,10 @@ struct SwipeableCardView<Content: View>: View {
                 content()
                     .foregroundColor(.white)
             )
-            .frame(width: 300, height: 400)
+            .frame(width: 325, height: 150)
             .shadow(radius: 10)
             .rotationEffect(.degrees(angle))
             .offset(x: translation.width, y: 0) // Adjust the offset based on translation
             .opacity(translation.width == 0 ? 1 : 0.8) // Reduce opacity when swiping
-            .animation(.spring()) // Apply spring animation
     }
 }

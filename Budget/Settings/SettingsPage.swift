@@ -11,14 +11,16 @@ import Supabase
 
 struct SettingsPage: View {
     @State var isAuthenticated = false
+    let communicator = ServerCommunicator()
+    
     
     var body: some View {
         ZStack {
             Color(UIColor(rgb: 0x8AAAE5)).ignoresSafeArea(.all)
             VStack {
                 Login(isAuthenticated: $isAuthenticated)
-                Settings(isAuthenticated: $isAuthenticated)
-                
+                Settings(isAuthenticated: $isAuthenticated, communicator: communicator)
+
             }.onAppear() {
                 authenticateUser()
             }

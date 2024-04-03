@@ -10,6 +10,7 @@ import SwiftUI
 
 struct Settings: View {
     @Binding var isAuthenticated: Bool
+    let communicator: ServerCommunicator
     
     var body: some View {
         if isAuthenticated {
@@ -21,20 +22,8 @@ struct Settings: View {
                     }
                 }
             }
+            // Link Plaid
+            PlaidLinkView(communicator: communicator)
         }
-        
-        // Link Plaid
-        PlaidLinkViewControllerWrapper()
-        
-    }
-}
-
-struct PlaidLinkViewControllerWrapper: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> PlaidLinkViewController {
-        return PlaidLinkViewController()
-    }
-
-    func updateUIViewController(_ uiViewController: PlaidLinkViewController, context: Context) {
-        // Update the view controller if needed
     }
 }

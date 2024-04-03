@@ -15,12 +15,7 @@ struct GreetingPage: View {
     @State var profitGoal = 0
     @State var isExpandKnowledgePresented = false
     @State var cards = [Card(text: "Fun Fact 1"),
-                        Card(text: "Fun Fact 2"),
-                        Card(text: "Fun Fact 3"),
-                        Card(text: "Fun Fact 4"),
-                        Card(text: "Fun Fact 5"),
-                        Card(text: "Fun Fact 6"),
-                        Card(text: "Fun Fact 7")]
+                        Card(text: "Fun Fact 2")]
     @State var currentIndex = 0
     @State var translation: CGSize = .zero
     
@@ -33,6 +28,11 @@ struct GreetingPage: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
             Spacer()
+            
+            //Swipe cards with fun facts and tips
+            SwipeableCardStack(items: $cards, currentIndex: $currentIndex, translation: $translation) { card in
+                SwipeableCardContent(card: card)
+            }.padding(.horizontal)
             
             //Box to show Jobs Completed
             NumberBox(text: "Jobs Completed", money: false, number: jobsCompleted)
@@ -56,12 +56,6 @@ struct GreetingPage: View {
             .sheet(isPresented: $isExpandKnowledgePresented) {
                 ExpandKnowledge()
             }
-            
-            //Swipe cards with fun facts and tips
-            SwipeableCardStack(items: $cards, currentIndex: $currentIndex, translation: $translation) { card in
-                SwipeableCardContent(card: card)
-            }.padding(.horizontal)
-            
             
             
             Spacer()
@@ -115,15 +109,5 @@ struct GreetingPage: View {
         } catch {
             debugPrint(error)
         }
-    }
-}
-
-struct SwipeableCardContent: View {
-    let card: Card
-    
-    var body: some View {
-        Text(card.text)
-            .font(.title)
-            .padding()
     }
 }

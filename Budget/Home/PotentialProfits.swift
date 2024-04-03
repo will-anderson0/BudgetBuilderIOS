@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 struct PotentialProfits: View {
     var body: some View {
         ZStack {

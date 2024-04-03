@@ -12,8 +12,13 @@ struct SwipeableCardContent: View {
     let card: Card
     
     var body: some View {
-        Text(card.text)
-            .font(.system(size: 24))
-            .padding()
+        GeometryReader { geometry in
+            Text(card.text)
+                .font(.system(size: 24))
+                .padding(.horizontal)
+                .frame(width: geometry.size.width, height: 150, alignment: .center)
+                .multilineTextAlignment(.center)
+        }
     }
 }
+

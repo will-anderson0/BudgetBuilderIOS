@@ -22,5 +22,19 @@ struct Settings: View {
                 }
             }
         }
+        
+        // Link Plaid
+        PlaidLinkViewControllerWrapper()
+        
+    }
+}
+
+struct PlaidLinkViewControllerWrapper: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> PlaidLinkViewController {
+        return PlaidLinkViewController()
+    }
+
+    func updateUIViewController(_ uiViewController: PlaidLinkViewController, context: Context) {
+        // Update the view controller if needed
     }
 }

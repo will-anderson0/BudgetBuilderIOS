@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A92F3FC22BB8FF9600D6321F /* SwipeableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F3FC12BB8FF9600D6321F /* SwipeableCardView.swift */; };
 		A92F3FC42BB8FFB000D6321F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F3FC32BB8FFB000D6321F /* Card.swift */; };
+		A92F3FC62BB9D52800D6321F /* SwipeableCardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F3FC52BB9D52800D6321F /* SwipeableCardContent.swift */; };
 		A9BFCB812BAF54260048F13C /* BudgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BFCB802BAF54260048F13C /* BudgetApp.swift */; };
 		A9BFCB832BAF54260048F13C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BFCB822BAF54260048F13C /* ContentView.swift */; };
 		A9BFCB852BAF54270048F13C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BFCB842BAF54270048F13C /* Assets.xcassets */; };
@@ -30,11 +31,18 @@
 		A9BFCBC82BB8F0160048F13C /* ExpandKnowledge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BFCBC72BB8F0160048F13C /* ExpandKnowledge.swift */; };
 		A9BFCBCA2BB8F3D90048F13C /* LinkBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BFCBC92BB8F3D90048F13C /* LinkBox.swift */; };
 		A9BFCBCD2BB8FE450048F13C /* SwipeableCardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BFCBCC2BB8FE450048F13C /* SwipeableCardStack.swift */; };
+		A9D088082BBCF976000210AE /* PlaidLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D088072BBCF976000210AE /* PlaidLinkViewController.swift */; };
+		A9D0880B2BBCFA80000210AE /* LinkKit in Frameworks */ = {isa = PBXBuildFile; productRef = A9D0880A2BBCFA80000210AE /* LinkKit */; };
+		A9D0880D2BBCFAA6000210AE /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0880C2BBCFAA6000210AE /* InitViewController.swift */; };
+		A9D0880F2BBCFAB9000210AE /* ServerCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0880E2BBCFAB9000210AE /* ServerCommunicator.swift */; };
+		A9D088112BBCFAF3000210AE /* ServerResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D088102BBCFAF3000210AE /* ServerResponses.swift */; };
+		A9D088132BBCFE90000210AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D088122BBCFE90000210AE /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A92F3FC12BB8FF9600D6321F /* SwipeableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardView.swift; sourceTree = "<group>"; };
 		A92F3FC32BB8FFB000D6321F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		A92F3FC52BB9D52800D6321F /* SwipeableCardContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardContent.swift; sourceTree = "<group>"; };
 		A9BFCB7D2BAF54260048F13C /* Budget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BFCB802BAF54260048F13C /* BudgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetApp.swift; sourceTree = "<group>"; };
 		A9BFCB822BAF54260048F13C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +65,11 @@
 		A9BFCBC72BB8F0160048F13C /* ExpandKnowledge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandKnowledge.swift; sourceTree = "<group>"; };
 		A9BFCBC92BB8F3D90048F13C /* LinkBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkBox.swift; sourceTree = "<group>"; };
 		A9BFCBCC2BB8FE450048F13C /* SwipeableCardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardStack.swift; sourceTree = "<group>"; };
+		A9D088072BBCF976000210AE /* PlaidLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaidLinkViewController.swift; sourceTree = "<group>"; };
+		A9D0880C2BBCFAA6000210AE /* InitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
+		A9D0880E2BBCFAB9000210AE /* ServerCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCommunicator.swift; sourceTree = "<group>"; };
+		A9D088102BBCFAF3000210AE /* ServerResponses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerResponses.swift; sourceTree = "<group>"; };
+		A9D088122BBCFE90000210AE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9BFCB9A2BB0B4E10048F13C /* Supabase in Frameworks */,
+				A9D0880B2BBCFA80000210AE /* LinkKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +113,7 @@
 				A9BFCB8E2BAF551F0048F13C /* JobListings.swift */,
 				A9BFCBB72BB4BC0D0048F13C /* UIColor.swift */,
 				A9BFCB9B2BB0B4FA0048F13C /* Supabase.swift */,
+				A9D088062BBCF8B9000210AE /* Plaid API */,
 				A9BFCBB12BB27A040048F13C /* Preview Content */,
 			);
 			path = Budget;
@@ -152,9 +167,22 @@
 			children = (
 				A9BFCBCC2BB8FE450048F13C /* SwipeableCardStack.swift */,
 				A92F3FC12BB8FF9600D6321F /* SwipeableCardView.swift */,
+				A92F3FC52BB9D52800D6321F /* SwipeableCardContent.swift */,
 				A92F3FC32BB8FFB000D6321F /* Card.swift */,
 			);
 			path = SwipecCardStack;
+			sourceTree = "<group>";
+		};
+		A9D088062BBCF8B9000210AE /* Plaid API */ = {
+			isa = PBXGroup;
+			children = (
+				A9D088122BBCFE90000210AE /* Main.storyboard */,
+				A9D088072BBCF976000210AE /* PlaidLinkViewController.swift */,
+				A9D0880C2BBCFAA6000210AE /* InitViewController.swift */,
+				A9D0880E2BBCFAB9000210AE /* ServerCommunicator.swift */,
+				A9D088102BBCFAF3000210AE /* ServerResponses.swift */,
+			);
+			path = "Plaid API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +203,7 @@
 			name = Budget;
 			packageProductDependencies = (
 				A9BFCB992BB0B4E10048F13C /* Supabase */,
+				A9D0880A2BBCFA80000210AE /* LinkKit */,
 			);
 			productName = Budget;
 			productReference = A9BFCB7D2BAF54260048F13C /* Budget.app */;
@@ -206,6 +235,7 @@
 			mainGroup = A9BFCB742BAF54260048F13C;
 			packageReferences = (
 				A9BFCB982BB0B4E10048F13C /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				A9D088092BBCFA80000210AE /* XCRemoteSwiftPackageReference "plaid-link-ios" */,
 			);
 			productRefGroup = A9BFCB7E2BAF54260048F13C /* Products */;
 			projectDirPath = "";
@@ -222,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9BFCB852BAF54270048F13C /* Assets.xcassets in Resources */,
+				A9D088132BBCFE90000210AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +267,8 @@
 				A9BFCB9C2BB0B4FA0048F13C /* Supabase.swift in Sources */,
 				A9BFCBBA2BB4DAC80048F13C /* GreetingPage.swift in Sources */,
 				A9BFCB932BAF56690048F13C /* BudgetSuggestions.swift in Sources */,
+				A92F3FC62BB9D52800D6321F /* SwipeableCardContent.swift in Sources */,
+				A9D0880F2BBCFAB9000210AE /* ServerCommunicator.swift in Sources */,
 				A9BFCB832BAF54260048F13C /* ContentView.swift in Sources */,
 				A9BFCB8F2BAF551F0048F13C /* JobListings.swift in Sources */,
 				A9BFCBC62BB670EC0048F13C /* ProgressBar.swift in Sources */,
@@ -243,14 +276,17 @@
 				A9BFCBC42BB661590048F13C /* NumberBox.swift in Sources */,
 				A9BFCBC82BB8F0160048F13C /* ExpandKnowledge.swift in Sources */,
 				A9BFCBA92BB22FDA0048F13C /* SettingsPage.swift in Sources */,
+				A9D088112BBCFAF3000210AE /* ServerResponses.swift in Sources */,
 				A9BFCBCD2BB8FE450048F13C /* SwipeableCardStack.swift in Sources */,
 				A9BFCBCA2BB8F3D90048F13C /* LinkBox.swift in Sources */,
+				A9D0880D2BBCFAA6000210AE /* InitViewController.swift in Sources */,
 				A9BFCB812BAF54260048F13C /* BudgetApp.swift in Sources */,
 				A9BFCB972BAF57180048F13C /* Home.swift in Sources */,
 				A9BFCB952BAF57010048F13C /* Settings.swift in Sources */,
 				A92F3FC42BB8FFB000D6321F /* Card.swift in Sources */,
 				A9BFCBB82BB4BC0D0048F13C /* UIColor.swift in Sources */,
 				A9BFCBC22BB4E4080048F13C /* Models.swift in Sources */,
+				A9D088082BBCF976000210AE /* PlaidLinkViewController.swift in Sources */,
 				A9BFCBA72BB0FAB70048F13C /* Login.swift in Sources */,
 				A92F3FC22BB8FF9600D6321F /* SwipeableCardView.swift in Sources */,
 			);
@@ -470,6 +506,14 @@
 				minimumVersion = 2.4.0;
 			};
 		};
+		A9D088092BBCFA80000210AE /* XCRemoteSwiftPackageReference "plaid-link-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/plaid/plaid-link-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -477,6 +521,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A9BFCB982BB0B4E10048F13C /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
+		};
+		A9D0880A2BBCFA80000210AE /* LinkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A9D088092BBCFA80000210AE /* XCRemoteSwiftPackageReference "plaid-link-ios" */;
+			productName = LinkKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

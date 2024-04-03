@@ -45,7 +45,7 @@ struct SwipeableCardStack<Content: View>: View {
                 } else {
                     SwipeableCardView(content: {
                         content(items[index])
-                    }, translation: .zero) // No translation for non-top cards
+                    }, translation: .zero)
                     .offset(x: offset, y: 0)
                     .rotationEffect(.degrees(0)) // No rotation for non-top cards
                     .scaleEffect(1)

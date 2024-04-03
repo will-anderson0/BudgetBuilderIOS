@@ -1,5 +1,5 @@
 {
-  "originHash" : "a2b47b975283c007063016d75469b395d89f8763da1d376160fb8c6dcfdb6109",
+  "originHash" : "b5e03d632f190fd235628b3cc8e4c763db19cee276bf9cfe659b44379c48dd4b",
   "pins" : [
     {
       "identity" : "keychainaccess",
@@ -11,12 +11,21 @@
       }
     },
     {
+      "identity" : "plaid-link-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/plaid/plaid-link-ios",
+      "state" : {
+        "revision" : "319ad52df3c066e487b736abb1dc3a271d0e8b32",
+        "version" : "5.3.3"
+      }
+    },
+    {
       "identity" : "supabase-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/supabase-community/supabase-swift",
       "state" : {
-        "revision" : "08eefdcfc75a8052c1fc0577418cff67d47b6332",
-        "version" : "2.4.0"
+        "revision" : "f167264ca134ed1bbf0218b13f808449cd0c96d2",
+        "version" : "2.5.0"
       }
     },
     {
